@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import { Redirect, useHistory } from 'react-router-dom'
 import './SignUp.css';
 
 class SignUp extends Component {
@@ -9,36 +10,41 @@ class SignUp extends Component {
 			username: '',
 			password: '',
 			confirmPassword: '',
-
+      redirect: null
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
-		this.handleChange = this.handleChange.bind(this)
-	}
+    this.handleChange = this.handleChange.bind(this)
+    
+  }
+  
 	handleChange(event) {
 		this.setState({
 			[event.target.name]: event.target.value
 		})
-	}
+  }
+  
 	handleSubmit(event) {
 		console.log('sign-up handleSubmit, username: ')
 		console.log(this.state.username)
 		event.preventDefault()
 
 		//request to server to add a new username/password
-		axios.post('/user/', {
+		axios.post('http://localhost:5000/users/', {
 			username: this.state.username,
 			password: this.state.password
 		})
 			.then(response => {
-				console.log(response)
-				if (!response.data.errmsg) {
-					console.log('successful signup')
-					this.setState({ //redirect to login page
-						redirectTo: '/login'
-					})
-				} else {
-					console.log('username already taken')
-				}
+        console.log(response)
+        this.setState({redirect: '/home'});
+				// if (!response.data.errmsg) {
+				// 	console.log('successful signup')
+				// 	this.setState({ //redirect to login page
+				// 		redirectTo: '/login'
+				// 	})
+				// } else {
+				// 	console.log('username already taken')
+        // }
+        
 			}).catch(error => {
 				console.log('signup error: ')
 				console.log(error)
@@ -48,10 +54,13 @@ class SignUp extends Component {
 
 
 render() {
+  if (this.state.redirect) {
+    return <Redirect to={this.state.redirect} />
+  }
 	return (
 		<div className="SignupForm">
 			<h1 id="heading">Sign up</h1>
-			<form className="form-horizontal">
+			<form className="form-horizontal" >
 				<div className="form-group">
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="username">Username: </label>
@@ -85,9 +94,9 @@ render() {
 					<div className=""></div>
 					<button
 						className="button"
-						onClick={this.handleSubmit}
+						onClick={(this.handleSubmit)}
 						type="submit"
-					>Register</button>
+					>Submit</button>
 				</div>
 			</form>
 		</div>

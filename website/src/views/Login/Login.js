@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, useHistory } from 'react-router-dom'
 import axios from 'axios'
 
 class Login extends Component {
+
   constructor() {
       super()
       this.state = {
@@ -13,6 +14,8 @@ class Login extends Component {
       this.handleSubmit = this.handleSubmit.bind(this)
       this.handleChange = this.handleChange.bind(this)
 
+      const history = useHistory();  
+  
   }
 
   handleChange(event) {

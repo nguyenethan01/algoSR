@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const questionRoutes = require('./routes/questions');
 const userRoutes = require('./routes/users');
@@ -9,6 +10,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use(cors());
 
 const uri = process.env.ATLAS_URI;
 
