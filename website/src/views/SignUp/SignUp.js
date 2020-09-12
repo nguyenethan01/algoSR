@@ -1,8 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SignUp() {
   return (
-    <h1> SignUp </h1>
+    <div className="signup">
+      <h1> Sign Up </h1>
+      <Link to='/home'>
+        <p> Home </p>
+      </Link>
+    </div>
   );
 }
 
