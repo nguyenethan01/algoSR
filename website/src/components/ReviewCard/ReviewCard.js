@@ -1,25 +1,27 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import './ReviewCard.css'
 
 function ReviewCard(){
   return(
-  <Card className="text-center">
-    <Card.Header>Current Review:</Card.Header>
-      <Card.Body>
-        <Card.Title>123. Two Sum </Card.Title>
-        <Button variant="primary">Practice</Button>
-        <Card.Text>
-          <br/>
-          Notes:
-          <br/>
-          - Use a dictionary
-          <br/>
-          - O(n) runtime!
-        </Card.Text>
-      </Card.Body>
-    <Card.Footer className="text-muted">Last Studied: 2 days ago</Card.Footer>
-  </Card>
+    <div className="reviewCard">
+      <h1>
+        123. Two Sum
+      </h1>
+      <button class="btn-primary">Practice</button>
+      <p className="notes">
+        <br/>
+        Notes:
+        <br/>
+        - Use a dictionary
+        <br/>
+        - O(n) runtime!
+      </p>
+      <div className="easy-medium-hard">
+        <button className="btn-success">Easy</button>
+        <button className="btn-warning">Medium</button>
+        <button className="btn-error">Hard</button>
+      </div>
+    </div>
 
   );
 } 
