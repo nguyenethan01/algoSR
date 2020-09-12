@@ -10,8 +10,13 @@ function NavBar(){
       </div>
       <ul className="right">
         <li  className="elem">
-          <Link to="/about">
-            All Cards
+          <Link to="/cards">
+            View Cards
+          </Link>
+        </li>
+        <li className="elem">
+          <Link to="/addcard">
+            Add Card
           </Link>
         </li>
         <h3 className="nav-name">Name</h3>
