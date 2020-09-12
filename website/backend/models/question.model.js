@@ -12,6 +12,4 @@ const questionSchema = new Schema({
     difficultyHistory: {type: String, required: true}
 });
 
-const Question = mongoose.model("Question", questionSchema);
-
-module.exports = Question
+module.exports = mongoose.model("Question", questionSchema);

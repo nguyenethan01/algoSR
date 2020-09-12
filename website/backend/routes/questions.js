@@ -3,6 +3,7 @@ let Question = require('../models/question.model');
 
 // INDEX
 router.route('/').get((req, res) => {
+    console.log('req.session', req.session);
     Question.find()
         .then(exercises => res.json(exercises))
         .catch(err => res.status(400).json('Error: ' + err))
