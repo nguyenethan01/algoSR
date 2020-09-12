@@ -5,7 +5,7 @@ let User = require('../models/user.model');
 router.route('/').post((req, res) => {
 
     console.log('here');
-    
+
     const username = req.body.username;
     const password = req.body.password;
 
@@ -23,11 +23,32 @@ router.route('/').post((req, res) => {
 });
 
 // SHOW
-router.route('/login').get((req, res) => {
+router.route('/login').post((req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    User.findOne
+    User.findOne({username: username}, (err, user) => {
+        
+        if (err) {
+            return res.status(400).send({
+                message: 'Server error'
+             });
+        } else if (!user) {
+            return res.status(401).send({
+                message: "Username doesn't exist"
+             });
+        } else {
+            if (password === user.password) {
+                res.send({
+                    id: user._id
+                });    
+            } else {
+                return res.status(402).send({
+                    message: "Incorrect password"
+                 });
+            }
+        }
+    });
 });
 
 module.exports = router;
