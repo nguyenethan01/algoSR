@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const questionRoutes = require('./routes/questions');
+const userRoutes = require('./routes/users');
 
 require('dotenv').config();
 
@@ -23,8 +25,8 @@ connection.once('open', () => {
 // ROUTES
 // =======
 
-// insert routes here
-
+app.use('/questions', questionRoutes);
+app.use('/users', userRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
