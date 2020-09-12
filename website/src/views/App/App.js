@@ -6,6 +6,8 @@ import Home from '../Home/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import AddCard from '../AddCard/AddCard';
+import ViewCards from '../ViewCards/ViewCards';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path='/home' component={Home} />
         <Route path='/login' component={Login} />
         <Route path='/signup' component={SignUp} />
+        <Route path='/addCard' component={AddCard} />
+        <Route path='/viewCards' component={ViewCards} />
       </Switch>
     </Router>
   );

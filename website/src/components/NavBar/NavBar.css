@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 10vh;
+  background-color: aquamarine;
 }
 
 .right{
@@ -23,3 +24,4 @@
 .left{
   padding: 20px;
 }
+
