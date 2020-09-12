@@ -8,7 +8,6 @@ function Home() {
     <div className="home">
       <Router>
         <NavBar />
-        <h1>Home</h1>
       </Router>
       <ReviewCard />
     </div>
