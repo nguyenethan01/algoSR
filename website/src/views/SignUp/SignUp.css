@@ -1,0 +1,12 @@
+input {
+    display: block;
+    margin: 10px;
+}
+
+label {
+    margin-left: 10px;
+}
+
+label, h1, p, button {
+    margin-left: 10px;
+}
