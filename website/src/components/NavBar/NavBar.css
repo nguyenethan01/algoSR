@@ -1,0 +1,25 @@
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 10vh;
+}
+
+.right{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.elem{
+  margin: 10px;
+}
+
+.nav-name{
+  margin: 20px;
+}
+
+.left{
+  padding: 20px;
+}
