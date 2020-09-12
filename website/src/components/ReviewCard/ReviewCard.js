@@ -5,15 +5,20 @@ import Button from 'react-bootstrap/Button';
 function ReviewCard(){
   return(
   <Card className="text-center">
-    <Card.Header>Featured</Card.Header>
+    <Card.Header>Current Review:</Card.Header>
       <Card.Body>
-        <Card.Title>Special title treatment</Card.Title>
+        <Card.Title>123. Two Sum</Card.Title>
+        <Button variant="primary">Practice</Button>
         <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
+          <br />
+          Notes:
+          <br />
+          -Use a dictionary!
+          <br />
+          -O(n) Runtime!
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
       </Card.Body>
-    <Card.Footer className="text-muted">2 days ago</Card.Footer>
+    <Card.Footer className="text-muted">Last Reviewed 2 days ago</Card.Footer>
   </Card>
 
   );
