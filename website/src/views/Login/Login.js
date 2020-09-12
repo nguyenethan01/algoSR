@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect, useHistory } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 class Login extends Component {
@@ -9,12 +9,10 @@ class Login extends Component {
       this.state = {
           username: '',
           password: '',
-          redirectTo: null
+          redirect: null
       }
-      this.handleSubmit = this.handleSubmit.bind(this)
-      this.handleChange = this.handleChange.bind(this)
-
-      const history = useHistory();  
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
   
   }
 
@@ -29,24 +27,27 @@ class Login extends Component {
       console.log('handleSubmit')
 
       axios
-          .post('/user/login', {
+          .post('http://localhost:5000/users/login', {
               username: this.state.username,
               password: this.state.password
           })
           .then(response => {
-              console.log('login response: ')
-              console.log(response)
+              console.log('login response: ');
+              console.log(response);
               if (response.status === 200) {
-                  // update App.js state
-                  this.props.updateUser({
-                      loggedIn: true,
-                      username: response.data.username
-                  })
-                  // update the state to redirect to home
-                  this.setState({
-                      redirectTo: '/'
-                  })
+                this.setState({redirect: '/home'});
               }
+              // if (response.status === 200) {
+              //     // update App.js state
+              //     this.props.updateUser({
+              //         loggedIn: true,
+              //         username: response.data.username
+              //     })
+              //     // update the state to redirect to home
+              //     this.setState({
+              //         redirectTo: '/'
+              //     })
+              
           }).catch(error => {
               console.log('login error: ')
               console.log(error);
@@ -55,6 +56,9 @@ class Login extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
     return (
       <div className="LoginForm">
         <h1 id="heading">Log In</h1>

@@ -7,7 +7,7 @@ function ReviewCard(){
       <h1>
         123. Two Sum
       </h1>
-      <button class="btn-primary">Practice</button>
+      <button className="btn-primary">Practice</button>
       <p className="notes">
         <br/>
         Notes:

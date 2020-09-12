@@ -10,6 +10,7 @@ router.route('/').get((req, res) => {
 
 // CREATE
 router.route('/').post((req, res) => {
+    // const user = req.body.user;
     const title = req.body.title;
     const url = req.body.url;
     const dateAdded = req.body.dateAdded;
