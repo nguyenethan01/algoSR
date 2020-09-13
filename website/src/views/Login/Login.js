@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import './Login.css';
 
 class Login extends Component {
 
@@ -54,9 +55,9 @@ class Login extends Component {
       <div className="LoginForm">
         <h1 id="heading">Log In</h1>
         <form className="form-horizontal">
-          <div className="form-group">
+          <div className="form-group" style={{margin:"0 auto 10px auto"}}>
             <div className="col-1 col-ml-auto">
-              <label className="form-label" htmlFor="username">Username: </label>
+              <label className="form-label" htmlFor="username" style={{color:"black"}}>Username: </label>
             </div>
             <div className="col-3 col-mr-auto">
               <input className="form-input"
@@ -69,9 +70,9 @@ class Login extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
+          <div className="form-group" style={{margin:"0 auto 10px auto"}}>
             <div className="col-1 col-ml-auto">
-              <label className="form-label" htmlFor="password">Password: </label>
+              <label className="form-label" htmlFor="password" style={{color:"black"}}>Password: </label>
             </div>
             <div className="col-3 col-mr-auto">
               <input className="form-input"
@@ -83,7 +84,7 @@ class Login extends Component {
               />
             </div>
           </div>
-          <div className="form-group ">
+          <div className="form-group" style={{margin:"10px auto"}}>
             <div className=""></div>
             <button
               className="button"
