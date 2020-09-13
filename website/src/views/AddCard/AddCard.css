@@ -1,0 +1,28 @@
+.add-card{
+  background-color: #5755d9;
+  height: 85.96vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-label{
+  color: white;
+}
+
+.form-group{
+  width: 60%;
+}
+.add-button{
+  border: none;
+  color: #5755d9;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 5px grey;
+}
