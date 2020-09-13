@@ -58,10 +58,33 @@ router.route('/:id').get((req, res) => {
     });
 });
 
-// // UPDATE
-// router.route('/:id').update((req, res) => {
+// UPDATE
+router.route('/:id').put((req, res) => {
 
-// });
+    // difficulty, timeDelta, difficultyHistory, previousAttempts
+
+    const timeDeltaMultiplier = {"easy": 2, "medium": 1.5, "hard": 1};
+
+    const newTimeDelta = req.body.timeDelta*timeDeltaMultiplier[req.body.difficulty];
+    const date = req.body.previousAttempts.pop();
+    const newDate = date.setDate(date.getDate() + newTimeDelta);
+    req.body.previousAttempts.push(new Date());
+    req.body.difficultyHistory.push(req.body.difficulty)
+    
+    Question.findByIdAndUpdate(req.params.id, {
+        "timeDelta": newTimeDelta,
+        "dateToReview": newDate,
+        "previousAttempts": req.body.previousAttempts,
+        "difficultyHistory": req.body.difficultyHistory
+    },
+    (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(result);
+        }
+    });
+});
 
 // // DELETE
 // router.route('/:id').delete((req, res) => {
