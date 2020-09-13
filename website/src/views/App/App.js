@@ -24,14 +24,21 @@ function App() {
 }
 
 const Landing = () => (
-  <div>
-    <h1>Landing Page</h1>
-    <Link to='/signup'>
-      <p> Sign Up </p>
+  <div className="Landing">
+    <h1 className="front-title">AlgoSR</h1>
+    <p className="front-description">The future of technical interview prep</p>
+    <div className="front-buttons">
+    <div className="landing-sign-up">
+    <Link to='/signup' >
+      <p className="signupt"> Sign Up </p>
     </Link>
+    </div>
+    <div className="landing-log-in">
     <Link to='/login'>
-      <p> Log In </p>
+      <p className="logint"> Log In </p>
     </Link>
+    </div>
+    </div>
   </div>
 );
 

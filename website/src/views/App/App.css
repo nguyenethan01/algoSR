@@ -1,1 +1,64 @@
-@import url("https://unpkg.com/spectre.css/dist/spectre.min.css")
+
+.Landing{
+  background-color: #5755d9;
+  height: 100vh;
+}
+
+.front-description{
+  color: white;
+  width: 23%;
+  position: absolute;
+  font-family: 'Josefin Slab', serif;
+  font-size: 25px;
+  left:800px;
+  top: 180px;
+  text-shadow: 4px 4px green;
+}
+
+.front-title{
+  color: white;
+  font-size: 200px;
+  font-family: 'Josefin Slab', serif;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 10px 10px green;
+}
+
+.landing-sign-up{
+  background-color: white;
+  width:10%;
+  height: 3.8vh;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px green;
+  margin: 20px;
+}
+
+.landing-log-in{
+  background-color: white;
+  width:10%;
+  height: 3.8vh;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px green;
+  margin: 20px;
+}
+.signupt{
+  text-align: center;
+  color: #5755d9;
+  font-family: 'Josefin Slab', serif;
+}
+.logint{
+  text-align: center;
+  color: #5755d9;
+  font-family: 'Josefin Slab', serif;
+}
+
+.front-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  top: 70%;
+}
