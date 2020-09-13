@@ -1,16 +1,24 @@
 const router = require('express').Router({mergeParams: true});
 let Question = require('../models/question.model');
+let User = require('../models/user.model');
 
 // INDEX
 router.route('/:id').get((req, res) => {
-    Question.find()
-        .then(exercises => res.json(exercises))
-        .catch(err => res.status(400).json('Error: ' + err))
+    User.findById(req.params.id).populate('questions').exec((err, foundUser) => {
+        console.log(foundUser['username']);
+        if (err) {
+            console.log('Error: ' + err)
+        } else {
+            res.json({
+                username: foundUser['username'],
+                questions: foundUser['questions']
+            });
+        }
+    });
 });
 
 // CREATE
-router.route('/').post((req, res) => {
-    // const user = req.body.user;
+router.route('/:id').post((req, res) => {
     const title = req.body.title;
     const url = req.body.url;
     const dateAdded = req.body.dateAdded;
@@ -21,15 +29,20 @@ router.route('/').post((req, res) => {
     const previousAttempts = req.body.previousAttempts;
     const difficultyHistory = req.body.difficultyHistory;
     const newQuestion = {title, url, dateAdded, dateToReview, comments, previousAttempts, difficultyHistory};
+    console.log('here');
+    User.findById(req.params.id).populate('questions').exec((err, foundUser) => {
 
     Question.create(newQuestion, (err, question) => {
         if (err) {
             console.log('Error: ' + err);
         } else {
             console.log(question);
-            res.send(question);
+            foundUser.questions.push(question);
+            foundUser.save();
+            console.log(foundUser);
         }
     });
+    })
 });
 
 // SHOW

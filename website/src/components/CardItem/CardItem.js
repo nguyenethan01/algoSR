@@ -1,13 +1,13 @@
 import React from 'react';
 import './CardItem.css'
 
-function CardItem(){
+function CardItem(props){
   return(
     <div className="cardItem">
-      <h3 className="carditem-title">123. Two Sum</h3>
+      <h3 className="carditem-title">{props.title}</h3>
       <div className="right">
         <p className="carditem-last-reviewed">
-          Last Reviewed: Two Days Ago
+          Last Reviewed: {props.lastReviewed}
         </p>
       </div>
     </div>

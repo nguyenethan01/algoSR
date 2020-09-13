@@ -1,14 +1,16 @@
 import React from 'react';
 import './ReviewCard.css'
 
-function ReviewCard(){
+function ReviewCard(props){
+
   return(
+    
     <div className="reviewCard">
       <h1>
         123. Two Sum
       </h1>
       <button className="btn-primary">Practice</button>
-      <p className="notes">
+      <p className="notes" >
         <br/>
         Notes:
         <br/>
