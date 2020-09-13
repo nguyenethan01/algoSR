@@ -14,7 +14,7 @@ function NavBar(props){
         <Link to={"/viewCards/" + props.id} className="nav-link">
           <li className="link-text">View Cards</li>
         </Link>
-        <Link to={"/addCard" + props.id} className="nav-link">
+        <Link to={"/addCard/" + props.id} className="nav-link">
           <li className="link-text" >Add Card </li>
         </Link>
         <h3 className="nav-name">Welcome {props.currentUser}!</h3>

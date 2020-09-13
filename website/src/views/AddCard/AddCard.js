@@ -5,7 +5,7 @@ import './AddCard.css';
 
 class AddCard extends Component{
 
-  constructor() {
+  constructor(props) {
     super()
     this.state = {
         title: '',
@@ -47,17 +47,17 @@ class AddCard extends Component{
 render(){
   return (
     <div className = "add-page">
-      <NavBar />
+      <NavBar currentUser={this.state.currentUser} id={this.state.id}/>
       <div className="add-card">
-      <div class="form-group">
-        <label class="form-label" for="input-example-1">Question Title</label>
-        <input class="form-input" onChange={this.handleChange} name="title" type="text" id="input-example-1" placeholder="Title"></input>
-        <label class="form-label" for="input-example-1">Question URL</label>
-        <input class="form-input" onChange={this.handleChange} name="url" type="text" id="input-example-1" placeholder="URL"></input>
-        <label class="form-label" for="input-example-1">Notes</label>
-        <input class="form-input" onChange={this.handleChange} name="comments" type="text" id="input-example-1" placeholder="Notes"></input>
+      <div className="form-group">
+        <label className="form-label" htmlFor="input-example-1">Question Title</label>
+        <input className="form-input" onChange={this.handleChange} name="title" type="text" id="input-example-1" placeholder="Title"></input>
+        <label className="form-label" htmlFor="input-example-1">Question URL</label>
+        <input className="form-input" onChange={this.handleChange} name="url" type="text" id="input-example-1" placeholder="URL"></input>
+        <label className="form-label" htmlFor="input-example-1">Notes</label>
+        <input className="form-input" onChange={this.handleChange} name="comments" type="text" id="input-example-1" placeholder="Notes"></input>
       </div>
-      <button type="button" className = "add-button">Submit</button>
+      <button type="button" className = "add-button" onClick={this.handleSubmit} >Submit</button>
       </div>
     </div>
   );
