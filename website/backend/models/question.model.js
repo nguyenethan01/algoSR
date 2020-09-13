@@ -6,13 +6,13 @@ const questionSchema = new Schema({
     
     title: {type: String, required: true},
     url: {type: String},
-    dateAdded: {type: String, required: true},
-    dateToReview: {type: String, required: true},
+    dateToReview: {type: Date, required: true},
+    timeDelta: {type: Number, required: true},
     comments: {type: String},
-    previousAttempts: {type: String, required: true},
-    difficultyHistory: {type: String, required: true}
+    previousAttempts: {type: [Date], required: true},
+    difficultyHistory: {type: [String], required: true}
 });
 
 const Question = mongoose.model("Question", questionSchema);
 
-module.exports = Question
+module.exports = Question;

@@ -2,6 +2,7 @@ const router = require('express').Router({mergeParams: true});
 let Question = require('../models/question.model');
 let User = require('../models/user.model');
 
+
 // INDEX
 router.route('/:id').get((req, res) => {
     User.findById(req.params.id).populate('questions').exec((err, foundUser) => {
@@ -19,17 +20,17 @@ router.route('/:id').get((req, res) => {
 
 // CREATE
 router.route('/:id').post((req, res) => {
+
+    const currDate = new Date();
+
     const title = req.body.title;
     const url = req.body.url;
-    const dateAdded = req.body.dateAdded;
-    const dateToReview = req.body.dateToReview;
-    // const dateAdded = Date.parse(req.body.dateAdded);
-    // const dateToReview = Date.parse(req.body.dateToReview);
+    const timeDelta = 3;
     const comments = req.body.comments;
-    const previousAttempts = req.body.previousAttempts;
-    const difficultyHistory = req.body.difficultyHistory;
-    const newQuestion = {title, url, dateAdded, dateToReview, comments, previousAttempts, difficultyHistory};
-    console.log('here');
+    const previousAttempts = [currDate];
+    const dateToReview = currDate.setDate(currDate.getDate() + 3);
+    const difficultyHistory = ['Added'];
+    const newQuestion = {title, url, timeDelta, dateToReview, comments, previousAttempts, difficultyHistory};
     User.findById(req.params.id).populate('questions').exec((err, foundUser) => {
 
     Question.create(newQuestion, (err, question) => {
