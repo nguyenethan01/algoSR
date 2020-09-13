@@ -38,16 +38,6 @@ class Login extends Component {
               if (response.status === 200) {
                 this.setState({redirect: '/home/' + userID});
               }
-              // if (response.status === 200) {
-              //     // update App.js state
-              //     this.props.updateUser({
-              //         loggedIn: true,
-              //         username: response.data.username
-              //     })
-              //     // update the state to redirect to home
-              //     this.setState({
-              //         redirectTo: '/'
-              //     })
               
           }).catch(error => {
               console.log('login error: ')
