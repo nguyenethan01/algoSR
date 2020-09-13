@@ -61,3 +61,23 @@
     display: inline-block;
     font-size: 16px;
 }
+
+.notes {
+  margin: 20px auto 0 auto;
+  text-align: center;
+}
+
+.no-card {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 60%;
+    background-color: #5755d9;
+}
+
+.no-card h2 {
+  color: white;
+}
