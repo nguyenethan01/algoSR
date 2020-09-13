@@ -7,10 +7,11 @@ import './Home.css'
 class Home extends Component {
 
   constructor(props) {
-    super(props);
-    // console.log('props', props);
+    super();
+    // console.log('home props', props);
 		this.state = {
-			id: this.props.match.params.id,
+      isLoading: true,
+			id: props.match.params.id,
       username: '',
       questions: [],
 
@@ -20,20 +21,32 @@ class Home extends Component {
   componentDidMount() {
     axios.get('http://localhost:5000/questions/' + this.props.match.params.id)
         .then(response => {
+
+          console.log('api called')
             if (response.data) {
               console.log('response', response);
               
               this.setState({
+                isLoading: false,
                 username: response.data.username,  
                 questions: response.data.questions
               })
             }
-            console.log('state', this.state);
+            console.log('STATE', this.state);
         });
   }
 
   render() {
+    if (this.state.isLoading) {
+      return (  
+        <div className="homepage">
+          <NavBar currentUser={this.state.username} id={this.state.id} />
+        </div>
+      );  
+    }
+
     return (
+      
       <div className="homepage">
         <NavBar currentUser={this.state.username} id={this.state.id} />
         <div className="home">
