@@ -29,8 +29,7 @@ class AddCard extends Component{
         .post('http://localhost:5000/questions/' + this.props.match.params.id, {
             title: this.state.title,
             url: this.state.url,
-            comments: this.state.comments,
-            currentDate: new Date()
+            comments: this.state.comments
         })
         .then(response => {
             console.log('add_card response: ');
