@@ -35,7 +35,7 @@ const Landing = () => (
     </div>
     <div className="landing-log-in">
     <Link to='/login'>
-      <p className="logint"> Log In </p>
+      <p className="login"> Log In </p>
     </Link>
     </div>
     </div>

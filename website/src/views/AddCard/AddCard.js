@@ -8,6 +8,7 @@ class AddCard extends Component{
   constructor(props) {
     super()
     this.state = {
+        id: props.match.params.id,
         title: '',
         url: '',
         comments: ''
