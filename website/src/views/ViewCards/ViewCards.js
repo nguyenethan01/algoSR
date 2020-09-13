@@ -39,7 +39,7 @@ class ViewCards extends Component {
         <div className="carditems">
           {
             this.state.questions.map((card) => {
-              return <CardItem key={card._id} title={card.title} lastReviewed={card.dateAdded} />
+              return <CardItem key={card._id} title={card.title} lastReviewed={card.dateToReview} />
             })
           }
         </div>
