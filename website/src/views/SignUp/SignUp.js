@@ -34,8 +34,11 @@ class SignUp extends Component {
 			password: this.state.password
 		})
 			.then(response => {
-        console.log(response)
-        this.setState({redirect: '/home'});
+        console.log(response['data']['id'])
+        const userID = response['data']['id'];
+        if (response.status === 200) {
+          this.setState({redirect: '/home/' + userID});
+        }
 				// if (!response.data.errmsg) {
 				// 	console.log('successful signup')
 				// 	this.setState({ //redirect to login page

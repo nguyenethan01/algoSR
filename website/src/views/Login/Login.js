@@ -33,9 +33,10 @@ class Login extends Component {
           })
           .then(response => {
               console.log('login response: ');
-              console.log(response);
+              console.log(response['data']['id']);
+              const userID = response['data']['id'];
               if (response.status === 200) {
-                this.setState({redirect: '/home'});
+                this.setState({redirect: '/home/' + userID});
               }
               // if (response.status === 200) {
               //     // update App.js state

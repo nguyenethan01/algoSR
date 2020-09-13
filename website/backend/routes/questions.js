@@ -2,7 +2,7 @@ const router = require('express').Router({mergeParams: true});
 let Question = require('../models/question.model');
 
 // INDEX
-router.route('/').get((req, res) => {
+router.route('/:id').get((req, res) => {
     Question.find()
         .then(exercises => res.json(exercises))
         .catch(err => res.status(400).json('Error: ' + err))

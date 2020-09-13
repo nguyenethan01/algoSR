@@ -3,7 +3,7 @@ import './NavBar.css';
 import { Link } from 'react-router-dom';
 
 
-function NavBar(){
+function NavBar(props){
   return(
     <nav className="navbar">
       <h3 className="nav-logo">AlgoSR</h3>
