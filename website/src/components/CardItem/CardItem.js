@@ -7,7 +7,7 @@ function CardItem(props){
       <h3 className="carditem-title">{props.title}</h3>
       <div className="right">
         <p className="carditem-last-reviewed">
-          Last Reviewed: {props.lastReviewed}
+          Date to Review: {props.lastReviewed.substring(0,10)}
         </p>
       </div>
     </div>
