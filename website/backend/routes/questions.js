@@ -60,13 +60,14 @@ router.route('/:id').get((req, res) => {
 
 // UPDATE
 router.route('/:id').put((req, res) => {
-
+    console.log(req.body)
     // difficulty, timeDelta, difficultyHistory, previousAttempts
 
     const timeDeltaMultiplier = {"easy": 2, "medium": 1.5, "hard": 1};
 
     const newTimeDelta = req.body.timeDelta*timeDeltaMultiplier[req.body.difficulty];
-    const date = req.body.previousAttempts.pop();
+    const date = new Date(req.body.previousAttempts.slice(-1)[0]);
+    console.log(typeof date);
     const newDate = date.setDate(date.getDate() + newTimeDelta);
     req.body.previousAttempts.push(new Date());
     req.body.difficultyHistory.push(req.body.difficulty)
