@@ -29,10 +29,10 @@ React.js |
 
 ## Screenshots
 
-<img src="screenshot.png" width="720" height="400" />
+<img src="screenshots/screenshot.png" width="720" height="400" />
 
 The landing page, with buttons for signing up and logging in.
 
-<img src="screenshot2.png" width="720" height="400" />
+<img src="screenshots/screenshot2.png" width="720" height="400" />
 
 The home page, where users can view all the questions they need to review for today.
