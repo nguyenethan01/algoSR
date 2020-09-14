@@ -18,7 +18,7 @@ The next time a question appears, we'll ask them to gauge its difficulty, and ou
 
 This way, users only have to focus on a small set of tailored questions each day, without wasting time worrying about which questions to revisit and when.
 
-## How We built it:
+## How we built it:
 
 Front-End | Back-End
 ------------|-------------
@@ -26,3 +26,13 @@ HTML | Node.js
 CSS | Express.js
 Spectre.css | MongoDB
 React.js |
+
+## Screenshots
+
+<img src="screenshot.png" width="720" height="400" />
+
+The landing page, with buttons for signing up and logging in.
+
+<img src="screenshot2.png" width="720" height="400" />
+
+The home page, where users can view all the questions they need to review for today.
