@@ -1,7 +1,5 @@
 # AlgoSR
 
-<img src='http://g.recordit.co/QWeOMVmh4X.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
 ## Inspiration
 
 Interview prep is a necessary but difficult step in the life of any software developer.
