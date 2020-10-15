@@ -1,16 +1,18 @@
+//imports
 const router = require('express').Router({mergeParams: true});
 let Question = require('../models/question.model');
 let User = require('../models/user.model');
-
 
 // INDEX
 router.route('/:id').get((req, res) => {
     User.findById(req.params.id).populate('questions').exec((err, foundUser) => {
         console.log(foundUser['username']);
         if (err) {
+            //return debug error
             console.log('Error: ' + err)
         } else {
             res.json({
+                //pass info
                 username: foundUser['username'],
                 questions: foundUser['questions']
             });
@@ -22,7 +24,7 @@ router.route('/:id').get((req, res) => {
 router.route('/:id').post((req, res) => {
 
     const currDate = new Date();
-
+    //user info
     const title = req.body.title;
     const url = req.body.url;
     const timeDelta = 3;
