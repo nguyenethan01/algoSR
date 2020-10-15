@@ -4,9 +4,9 @@
 
 Interview prep is a necessary but difficult step in the life of any software developer.
 
-Each year, students dread the internship application season, knowing that a long, arduous journey awaits them. Month after month of practicing data structures, algorithms, and redoing Leetcode questions again and again.
+Each year, students dread the internship application season, knowing that a long, arduous journey awaits them. Month after month of practicing data structures, algorithms, and redoing Leetcode questions again and again. There must be a better way. There is a better way.
 
-We decided to create AlgoSR, a web app using spaced repetition, to make the internship preparation experience as frictionless and pleasurable as possible.
+We decided to create AlgoSR, a web app utlilizing spaced repetition to make the internship preparation experience as frictionless and pleasurable as possible. 
 
 ## What it does
 
